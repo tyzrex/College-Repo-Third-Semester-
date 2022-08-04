@@ -2,6 +2,19 @@
 #include<stack>
 using namespace std;
 
+bool isOperator(char c)
+{
+	if(c=='+'||c=='-'||c=='*'||c=='/'||c=='^')
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+
 int precedence(char c) 
 { 
     if(c == '^') 
