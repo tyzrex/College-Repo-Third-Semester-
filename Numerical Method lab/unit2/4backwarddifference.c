@@ -20,21 +20,18 @@ int main()
     {
         printf("\nEnter the value at which interpolation is required: ");
         scanf("%f", &xp);
-        s = (xp - x[n]) / h;
-        p = 1;
-        v = fx[n];
-        for (int i = 1; i <= n; i++)
-            bd[i] = fx[i];
-
-        for (int i = n, k = 1; i >= 1, k < n; i--, k++)
-        {
-            for (int j = n; j >= n - 1; j--)
-            {
-                bd[j] = bd[j] - bd[j - 1];
+         s=(xp-x[n])/h;
+        p=1;
+        v=fx[n];
+        for(int i=1;i<=n; i++){
+            bd[i]=fx[i];
+        }
+        for(int i=n,k=1; i>=1,k<n; i--,k++){
+            for(int j=n;j>=n-i;j--){
+                bd[j]=bd[j]-bd[j-1];
             }
-
-            p = p * (s + k - 1) / k;
-            v = v + p * bd[n];
+            p=p*(s+k-1)/k;
+            v=v+p*bd[n];
         }
 
         printf("\nInterpolated function value at x=%f is %f.", xp, v);
