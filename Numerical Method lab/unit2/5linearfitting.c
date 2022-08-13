@@ -17,8 +17,8 @@ int main()
   {
     sumx = sumx + x[i];
     sumy = sumy + y[i];
-    sumxy = sumxy + x[i] * y[i];
     sumxx = sumxx + x[i] * x[i];
+    sumxy = sumxy + x[i] * y[i];
   }
   xmean = sumx / n;
   ymean = sumy / n;
