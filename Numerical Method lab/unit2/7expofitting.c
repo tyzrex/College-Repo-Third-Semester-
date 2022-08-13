@@ -5,11 +5,11 @@
 int main()
 {
     int n;
-    float x[MAX], y[MAX];
-    float sumx = 0.0, sumy = 0.0, sumxx = 0.0, sumxy = 0.0, xmean, ymean, denom, a, b;
+    float x[MAX], y[MAX], u[MAX];
+    float sumx = 0.0, sumu = 0.0, sumxx = 0.0, sumxu = 0.0, xmean, umean, denom, a, b;
 
-    /* Reading data values */
-    printf("\nInput the number of data points: ");
+    /*Reading data values*/
+    printf("\nInput number of data points: ");
     scanf("%d", &n);
 
     printf("\nInput x and y values (one set on each line): ");
@@ -18,20 +18,25 @@ int main()
         scanf("%f %f", &x[i], &y[i]);
     }
 
-    /* Computing constants a and b */
+    for (int i = 1; i <= n; i++)
+    {
+        u[i] = log(y[i]);
+    }
+
+    /*Computing constants a and b*/
     for (int i = 1; i <= n; i++)
     {
         sumx += x[i];
-        sumy += y[i];
+        sumu += u[i];
         sumxx += x[i] * x[i];
-        sumxy += x[i] * y[i];
+        sumxu += x[i] * u[i];
     }
     xmean = sumx / n;
-    ymean = sumy / n;
+    umean = sumu / n;
     denom = n * sumxx - sumx * sumx;
-    b = (n * sumxy - sumx * sumy) / denom;
-    a = ymean - b * xmean;
+    b = (n * sumxu - sumx * sumu) / denom;
+    a = exp(umean - b * xmean);
 
-    printf("\nThe line that is fit to the given data is y = %f + %fx.", a, b);
+    printf("\n The exponential equation that is fit to the given data is y = %f e^%fx.", a, b);
     return 0;
 }
