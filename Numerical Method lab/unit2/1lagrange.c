@@ -6,7 +6,7 @@ int main()
 {
     int n;
     float x[MAX], f[MAX], fp, lf, sum, xp;
-    char q = 'y';
+    char q;
 
     printf("\nInput the number of data pairs: ");
     scanf("%d", &n);
@@ -36,7 +36,6 @@ int main()
 
         printf("\nInterpolated function value at x = %.5f is %.5f.\n", xp, fp);
         printf("Do you want to input another value? (y/n): ");
-        fflush(stdin); // clear input buffer
         scanf("%c", &q);
     } while (q == 'y');
     return 0;
