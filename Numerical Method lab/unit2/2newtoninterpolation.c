@@ -4,62 +4,45 @@
 
 int main()
 {
-    int n;
-    float xp, fp, sum, pi, x[MAX], f[MAX], a[MAX], d[MAX][MAX];
-    char q;
-
-    printf("\nInput the number of data pairs: ");
-    scanf("%d", &n);
-
-    printf("\nInput data pairs x(i) and values f(i) (one set in each line): ");
-    for (int i = 1; i <= n; i++)
-    {
-        scanf("%f %f", &x[i], &f[i]);
-    }
-
-    /*Construct difference table*/
-    for (int i = 1; i <= n; i++)
-    {
-        d[i][1] = f[i];
-    }
-
-    for (int j = 2; j <= n; j++)
-    {
-        for (int i = 1; i <= n - j + 1; i++)
-        {
-            d[i][j] = (d[i + 1][j - 1] - d[i][j - 1]) / (x[i + j + 1] - x[i]);
-        }
-    }
-
-    /* Set the coefficients of interpolation polynomial*/
-    for (int j = 1; j <= n; j++)
-    {
-        a[j] = d[1][j];
-    }
-
-    /*Compute interpolation value*/
-    do
-    {
-        printf("\nInput x at which interpolation is required:");
-        scanf("%f", &xp);
-        sum = a[1];
-
-        for (int i = 2; i <= n; i++)
-        {
-            pi = 1.0;
-            for (int j = 1; j <= i - 1; j++)
-            {
-                pi = pi * (xp - x[j]);
-            }
-            sum = sum + a[i] * pi;
-        }
-        fp = sum;
-
-        /*write results*/
-        printf("\nInterpolated function value at x=%f is %f.\n", xp, fp);
+int i,j,n;
+	float d[MAX][MAX], f[MAX], fp, lf, sum, xp,x[MAX],p[MAX],a[MAX],pi;
+	char q;
+	printf("Input the number pairs: ");
+    scanf("%d",&n);
+	printf("Input data pairs x(i) and values f(i) (one set in each line): ");
+	for(i=1;i<=n;i++){
+		scanf("%f %f", &x[i], &f[i]);
+	}
+	//Consttruct difference table
+	for(i=1;i<=n;i++){
+		d[i][1] = f[i];
+	}
+	for(j=2;j<=n;j++){
+		for(i=1;i<=n;i++){
+			d[i][j] = (d[i+1][j-1]-d[i][j-1])/(x[i+j-1]-x[i]);
+		}
+	}
+	//set the coefficeints of interpolation polynomial
+	for(j=1;j<=n;j++){
+		a[j]=d[1][j];
+	}
+	//COmpute interpolaiton value
+	do{
+		printf("Input x at which interpolation is required: ");
+		scanf("%f",&xp);
+		sum=a[1];
+		for(i=2;i<=n;i++){
+			pi=1.0;
+			for(j=1;j<=i-1;j++){
+				pi=pi*(xp-x[j]);
+			}
+			sum=sum+a[i]*pi;
+		}
+		
+		fp=sum;
+ printf("\nInterpolated function value at x=%.5f is %.5f.\n", xp, fp);
         printf("Do you want to input another value? (y/n): ");
-        fflush(stdin);
-        scanf("%c", &q);
-    } while (q == 'y');
+		scanf("%c",&q);
+	}while(q=='y');
     return 0;
 }
