@@ -50,6 +50,9 @@ int Stack::pop(){
 //display stack
 void Stack::Display(){
     Node *p = top;
+    if(top==NULL){
+        cout<<"Stack is empty nothing to display";
+    }
     while(p != NULL){
         cout << p->data << " ";
         p = p->next;

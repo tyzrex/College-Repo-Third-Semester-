@@ -52,6 +52,9 @@ int Queue::dequeue(){
 
 void Queue::Display(){
     Node *p = front;
+    if(p==NULL){
+        cout<<"Queue is empty nothing to display";
+    }
     while(p != NULL){
         cout << p->data << " ";
         p = p->next;
