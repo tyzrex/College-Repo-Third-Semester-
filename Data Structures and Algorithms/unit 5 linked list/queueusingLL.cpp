@@ -62,12 +62,36 @@ void Queue::Display(){
 int main()
 {
     Queue q;
-    q.enqueue(10);
-    q.enqueue(20);
-    q.enqueue(30);
-    q.Display();
-    cout << q.dequeue() << endl;
-    q.Display();
+    int choice;
+    char ch;
+    cout<<"1. Enqueue"<<endl;
+    cout<<"2. Dequeue"<<endl;
+    cout<<"3. Display"<<endl;
+    do{
+        cout<<"Enter your choice: ";
+        cin>>choice;
+
+        switch(choice){
+            case 1:
+                cout<<"Enter the element to be inserted: ";
+                cin>>choice;
+                q.enqueue(choice);
+                break;
+
+            case 2:
+                cout<<"The deleted element is: "<<q.dequeue()<<endl;
+                break;
+
+            case 3:
+                q.Display();
+                break;
+
+            default:
+                cout<<"Invalid choice"<<endl;
+        }
+        cout<<"Do you want to continue(y/n): ";
+        cin>>ch;
+    }while(ch == 'y' || ch == 'Y');
     return 0;
 }
 
