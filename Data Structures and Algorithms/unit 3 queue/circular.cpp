@@ -99,8 +99,9 @@ public:
                  << "Front = " << front;
             cout << endl
                  << "Queue elements : ";
-            for (i = front; i <= rear; i++)
+            for (i = front; i != rear; i=(i+1)%size)
                 cout << arr[i] << "\t";
+            cout<<arr[rear];
             cout << endl
                  << "Rear = " << rear << endl;
         }
