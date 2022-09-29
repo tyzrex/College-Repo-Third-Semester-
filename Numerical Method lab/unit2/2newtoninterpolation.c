@@ -40,7 +40,7 @@ int i,j,n;
 		}
 		
 		fp=sum;
- printf("\nInterpolated function value at x=%.5f is %.5f.\n", xp, fp);
+        printf("\nInterpolated function value at x=%.5f is %.5f.\n", xp, fp);
         printf("Do you want to input another value? (y/n): ");
 		scanf("%c",&q);
 	}while(q=='y');
