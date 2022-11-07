@@ -31,10 +31,10 @@ int main()
 		{
 			sum += 2 * f(x + 2 * h);
 		}
-		sum += f(a) + f(b);
+	}
+	sum += f(a) + f(b);
 		ics = sum * 3 * h / 8.0;
 		printf("\nIntegration between %f and %f when h=%f is %f.", a, b, h, ics);
-	}
 
 	return 0;
 }
