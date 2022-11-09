@@ -10,7 +10,7 @@ return y2;
 
 float f2(float x, float y1, float y2)
 {
-return 2*x*x*y1+1;
+return 3*x*y1+1;
 }
 
 float euler(float x0,float x1,float y0,float y1,float h)
@@ -82,10 +82,14 @@ float rk(float x0,float x1,float y0,float y1,float h)
 int main(){
     float x0,yx0,x1,yx1,guess1,guess2,guess3,yguess1,yguess2,yguess3,xp,yxp,h;
     char q;
-    printf("Enter the value of x0,y(x0),x1,y(x1),h:");
-    scanf("%f%f%f%f%f",&x0,&yx0,&x1,&yx1,&h);
-    printf("Enter the first guess of y(%f):",x1);
+    printf("Enter the first boundry conditions x and y(x): ");
+    scanf("%f%f",&x0,&yx0);
+    printf("Enter the second boundry conditions x and y(x): ");
+    scanf("%f%f",&x1,&yx1);
+    printf("Enter the guess1 value: ");
     scanf("%f",&guess1);
+    printf("Enter the step: ");
+    scanf("%f",&h);
     yguess1 = heun(x0,x1,yx0,guess1,h);
     printf("\n The calculated value of y(%f) is %f",x1,yguess1);
     if(fabs(yguess1-yx1)<EPS)

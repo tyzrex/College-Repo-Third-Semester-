@@ -5,19 +5,19 @@
 
 float f1(float x, float y1, float y2)
 {
-return -4*y1+2*y2;
+return x+y1+2*y2;
 }
 
 float f2(float x, float y1, float y2)
 {
-return 2*y1-4*y2;
+return 1+2*y1+y2;
 }
 
 void euler(float x0,float x1,float y0,float y1,float h)
 {
     float m1,m2;
-    printf("\n\nCalculation of y(%f) for guess %f:",x1,y1);
-    printf("\n x\t\t y(x)");
+    printf("\n\nCalculation of y_1(%f) and y_2(%f) :",x1,y1);
+    printf("\n x\t\t y1(x) \t\t y2(x)");
     while(fabs(x1-x0)>EPS)
     {
         printf("\n %f\t %f",x0,y0);
@@ -49,6 +49,7 @@ void heun(float x0,float x1,float y0,float y1,float h)
         x0=x0+h;
     }
     printf("\n %f\t %f\t %f",x0,y0,y1);
+    printf("\n\nThe value of y1(%f) is %f and y2(%f) is %f",x1,y0,x1,y1);
     return;
 }
 
@@ -79,15 +80,15 @@ float rk(float x0,float x1,float y0,float y1,float h)
 int main(){
     float x0,x1,y0,y1,h;
     char ch;
-    printf("Enter the initial values of x and y(x):");
+    printf("Enter the initial values of x and y(x): ");
     scanf("%f%f",&x0,&y0);
-   printf("Enter the value  of y_2(x):");
+   printf("Enter the value  of y_2(x): ");
     scanf("%f",&y1);
-    printf("Enter the step size:");
+    printf("Enter the step size: ");
     scanf("%f",&h);
 
     do{
-        printf("\n\n Enter the value of x for which y(x) is to be calculated:");
+        printf("\n\n Enter the value of x for which y(x) is to be calculated: ");
         scanf("%f",&x1);
         heun(x0,x1,y0,y1,h);
         printf("\n\n Do you want to continue? (y/n)");
