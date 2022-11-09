@@ -82,14 +82,14 @@ int main(){
     char q;
     printf("Enter the initial values of x and y:");
     scanf("%f%f",&x0,&y0);
+    printf("Enter the value of y'(x): ");
+    scanf("%f",&y1);
     printf("Enter the step size:");
     scanf("%f",&h);
 
     do{
         printf("Enter the value of x for which y is to be calculated:");
         scanf("%f",&x1);
-        printf("Enter the guess value of y(%f):",x1);
-        scanf("%f",&y1);
         yxp = heun(x0,x1,y0,y1,h);
         printf("The approxmiate value of y(%f) is %f",x1,yxp);
         printf("\n\n Do you want to continue? (y/n)");
