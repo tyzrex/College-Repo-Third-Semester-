@@ -1,9 +1,4 @@
 // wap to implement merge sort algorithm
-
-#include <iostream>
-
-using namespace std;
-
 #include <iostream>
 using namespace std;
 
