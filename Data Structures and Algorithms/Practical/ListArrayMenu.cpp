@@ -30,7 +30,10 @@ int main(){
             "2. Entry at the specific position in array\n"
             "3. Entry at the end of the array \n"
             "4. Display the array\n"
-            "5. Initialize new array\n";
+            "5. Initialize new array\n"
+            "6. Delete from the beginning of the array\n"
+            "7. Delete from the specific position in array\n"
+            "8. Delete from the end of the array\n";
         cout<<"\nEnter choice: ";
         cin>>user_choice;
         switch(user_choice){
@@ -75,6 +78,28 @@ int main(){
                 take_initial_array(numArray,num_array_count);
                 display_initial_array(numArray,num_array_count);
 
+            case 6:
+                cout<<"\nThis is menu for deleting from the beginning of array \n";
+                remove_array_beginning(numArray,num_array_count);
+                num_array_count--;
+                break;
+
+
+            case 7:
+                int position;
+                cout<<"\nThis is menu for deleting from certain position in array \n";
+                cout<<"\nEnter position to delete: ";
+                cin>>position;
+                remove_array_positions(numArray,num_array_count,position);
+                num_array_count--;
+                break;
+
+            case 8:
+                cout<<"\nthis is meny for deleting from end of the array: \n";
+                remove_array_end(numArray,num_array_count);
+                num_array_count--;
+                break;
+
             default:    
                 cout<<"\nEnter valid number(1,2,3,4): \n";
         }
@@ -114,3 +139,20 @@ void insert_array_positions(int *numArray, int num_array_count, int elem_to_inse
 void insert_array_end(int *numArray, int num_array_count, int elem_to_insert){
     numArray[num_array_count]=elem_to_insert;
 }
+
+void remove_array_beginning(int *numArray, int num_array_count){
+    for(int i=0; i<num_array_count; i++){
+        numArray[i]=numArray[i+1];
+    }
+}
+
+void remove_array_positions(int *numArray, int num_array_count,int position){
+    for(int i=position-1; i<num_array_count; i++){
+        numArray[i]=numArray[i+1];
+    }
+}
+
+void remove_array_end(int *numArray, int num_array_count){
+    numArray[num_array_count-1]=0;
+}
+
