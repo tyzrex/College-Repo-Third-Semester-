@@ -95,6 +95,7 @@ int main(){
 				
 			case 3:
 				s.peek();
+                cout<<"The top element is: "<<s.peek()<<endl;
 				break;
 			
 			case 4:
