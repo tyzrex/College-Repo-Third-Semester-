@@ -4,9 +4,9 @@
 
 ##### <u>Steps to run the program:</u>
 
-###### 1. Create a project:![create](\\wsl.localhost\Ubuntu\home\sulav\Documents\College-Repo-Third-Semester-\Computer Architecture\Practical Exam\assets\create.png)
+###### 1. Create a project:
 
-
+![create](./assets/create.png)
 
 ---
 
