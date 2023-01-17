@@ -2,7 +2,7 @@
 
 ---
 
-### <u>Steps to run the program:</u>
+## <u>Steps to run the program:</u>
 
 ###### 1. Create a project:
 
