@@ -16,12 +16,6 @@ After this then right click on full_adder on the left side of the screen and add
 
 ---
 
-Then now the msgs part appears on the wave 
-
-![msg](./assets/msgs.png)
-
----
-
 Now force the inputs as per your requirement 
 
 ![force](./assets/force.png)
