@@ -22,7 +22,7 @@ Now force the inputs as per your requirement
 
 ---
 
-Give the ALU signal lines which is of 3 bits that signify the procedure that is to be done in the ALU. The following table shows all the possibilities
+The following are the possibilites of inputs there are 3 inputs A,B and C and there are two possible outputs S and C. Input the inputs seeing the table and then watch out for the specific output it generates
 
 | A    | B    | C    | S    | C    |
 | ---- | ---- | ---- | ---- | ---- |
@@ -35,7 +35,7 @@ Give the ALU signal lines which is of 3 bits that signify the procedure that is 
 | 1    | 1    | 0    | 0    | 1    |
 | 1    | 1    | 1    | 1    | 1    |
 
-Now suppose we take the inputs as 001 for the 3 inputs available then
+Now suppose we take the inputs as 011 for the 3 inputs available then
 
 ![inp1](./assets/inp1.png)
 
