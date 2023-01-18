@@ -55,7 +55,7 @@ Now run the program to get the output
 
 ![output](./assets/output.png)
 
-From this example we can see that we gave the outputs 0001 and 0010 and the selection line was 000 which indicates addition procedure so the output is justified as the sum which is 0011 so we performed the addition operation. Similarly we can do other operations by changing the selection line codes.
+From this example we can see that when the inputs are A: 0 B:1 and C:1 then the value of S and C are 0 and 1
 
 ---
 
