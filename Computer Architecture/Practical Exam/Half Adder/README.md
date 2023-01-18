@@ -47,7 +47,7 @@ Now you can get the waves shown below:
 
 ![output](./assets/output.png)
 
-From this wave we can see in a half adder when both the inputs are low or 0 then sum and carry also is 0. We can get other inputs by manipulating the inputs by forcing them to either 0 or 1 like in step 15 and then after manipulating the inputs simply click the run button or the F9 button and we will get another output according to the inputs provided we can see example below:
+From this wave we can see in a half adder when both the inputs are low or 0 then sum and carry also is 0. We can get other inputs by manipulating the inputs by forcing them to either 0 or 1 then after manipulating the inputs simply click the run button or the F9 button and we will get another output according to the inputs provided we can see example below:
 
 ![](./assets/secondoutput.png)
 
